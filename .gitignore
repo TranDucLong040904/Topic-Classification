@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+. Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Model files (quá lớn)
+backend/models/*.pkl
+backend/models/*.joblib
+backend/models/*.h5
+
+# Data files (nếu quá lớn)
+backend/data/*.csv
+# Hoặc chỉ ignore file lớn:
+# backend/data/large_dataset.csv
+
+# IDE
+.vscode/
+. idea/
+*.swp
+*. swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+project structure.txt
+roadmap.txt
+srs.txt
+prompt.txt
