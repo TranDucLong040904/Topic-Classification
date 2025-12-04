@@ -52,12 +52,12 @@
                 <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
                     
                     <!-- HEADER -->
-                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200/80 dark:border-border-dark px-6 py-4">
+                    <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-solid border-gray-200/80 dark:border-border-dark px-6 py-4">
                         <div class="flex items-center gap-4">
                             <div class="text-3xl bg-gradient-to-r from-primary-blue to-primary-cyan dark:from-primary-teal dark:to-primary-purple text-transparent bg-clip-text">
-                                <span class="material-symbols-outlined ! text-4xl">smart_toy</span>
+                                <span class="material-symbols-outlined !text-4xl">smart_toy</span>
                             </div>
-                            <div>
+                            <div class="flex-1">
                                 <h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
                                     Phân Loại Chủ Đề Văn Bản
                                 </h1>
@@ -66,7 +66,7 @@
                                 </p>
                             </div>
                         </div>
-                        <button id="themeToggle" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 w-10 bg-white/60 dark:bg-card-dark text-gray-600 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 backdrop-blur-sm border border-gray-200/80 dark:border-transparent hover:scale-110 transition-transform">
+                        <button id="themeToggle" class="self-center md:self-auto flex cursor-pointer items-center justify-center rounded-xl h-10 w-10 bg-white/60 dark:bg-card-dark text-gray-600 dark:text-white text-sm font-bold min-w-0 backdrop-blur-sm border border-gray-200/80 dark:border-transparent hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined" id="themeIcon">light_mode</span>
                         </button>
                     </header>
