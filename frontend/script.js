@@ -216,7 +216,7 @@ function renderDonutChart(predictions) {
         options: {
             responsive: true,
             maintainAspectRatio: true,
-            cutout: '70%',
+            cutout: '35%',
             plugins: {
                 legend: { display: false },
                 tooltip: {
