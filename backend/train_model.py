@@ -20,7 +20,8 @@ import re
 
 # File input - SỬA ĐỔI QUAN TRỌNG
 # Input file - IMPORTANT CHANGE
-INPUT_FILE = 'data/huggingface_dataset.csv'
+# INPUT_FILE = 'data/huggingface_dataset.csv'
+INPUT_FILE = 'data/improved_dataset.csv'
 
 # Thư mục lưu model
 # Model output directory
