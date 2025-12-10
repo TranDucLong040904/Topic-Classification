@@ -1,0 +1,286 @@
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark .hero-section {
+    background: linear-gradient(135deg, #00F5A0 0%, #A339FF 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-icon {
+    font-size: 5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight:  800;
+    color: white;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    font-size: 1.125rem;
+    font-weight:  700;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    align-self: center;
+}
+
+.dark .hero-cta {
+    color: #0B021D;
+    background:  rgba(255, 255, 255, 0.9);
+}
+
+.hero-cta:hover {
+    transform:  scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    font-weight:  800;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+
+.dark .features-title {
+    color: #EAEAEA;
+}
+
+.features-subtitle {
+    font-size: 1.125rem;
+    color: #6B7280;
+}
+
+.dark .features-subtitle {
+    color: #a092c4;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border:  1px solid rgba(229, 231, 235, 0.8);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.dark .feature-card {
+    background: rgba(22, 12, 44, 0.8);
+    border-color: #2B1A4B;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight:  700;
+    margin-bottom: 0.5rem;
+    color: #1F2937;
+}
+
+.dark .feature-title {
+    color: #EAEAEA;
+}
+
+.feature-desc {
+    font-size: 0.875rem;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+.dark .feature-desc {
+    color: #a092c4;
+}
+
+/* Topics Section */
+.topics-section {
+    max-width: 1200px;
+    margin:  0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.topics-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom:  2rem;
+    color: #1F2937;
+}
+
+.dark .topics-title {
+    color: #EAEAEA;
+}
+
+.topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.topic-badge {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.topic-badge:hover {
+    transform: scale(1.1);
+}
+
+.topic-sports { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.topic-economy { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.topic-entertainment { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.topic-technology { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.topic-education { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.topic-health { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+.topic-law { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+.topic-news { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+.topic-science { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+.topic-culture { background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); }
+
+/* CTA Banner */
+.cta-banner {
+    background: linear-gradient(135deg, #4F46E5 0%, #22D3EE 100%);
+    padding: 4rem 2rem;
+    margin:  4rem 2rem;
+    border-radius: 1.5rem;
+    text-align:  center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.dark .cta-banner {
+    background: linear-gradient(135deg, #00F5A0 0%, #A339FF 100%);
+}
+
+.cta-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #4F46E5;
+    background: white;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.dark .cta-button {
+    color: #0B021D;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width:  768px) {
+    .hero-section {
+        padding: 4rem 1.5rem;
+        min-height: 50vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .features-title {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-text {
+        font-size: 1.75rem;
+    }
+    
+    .cta-banner {
+        margin: 2rem 1rem;
+    }
+}

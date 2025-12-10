@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phân Loại Chủ Đề Văn Bản</title>
+    <title>Phân loại - Topic Classifier</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com? plugins=forms,container-queries"></script>
 
     <!-- Chart.js Local -->
-    <script src="libs/chart.min.js"></script>   
+    <script src="../libs/chart.min.js"></script>   
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,35 +41,46 @@
         };
     </script>
     
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/shared.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/classify.css">
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300">
     
+    <!-- Desktop Navbar -->
+    <nav class="navbar-desktop">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                <span class="navbar-logo-emoji">📰</span>
+                <span class="navbar-logo-text">Topic Classifier</span>
+            </a>
+            
+            <div class="navbar-menu">
+                <a href="home.html" class="navbar-link" data-page="home">
+                    <span class="navbar-link-emoji">🏠</span>
+                    <span>Giới thiệu</span>
+                </a>
+                <a href="classify.html" class="navbar-link" data-page="classify">
+                    <span class="navbar-link-emoji">🔍</span>
+                    <span>Phân loại</span>
+                </a>
+                <a href="history.html" class="navbar-link" data-page="history">
+                    <span class="navbar-link-emoji">📜</span>
+                    <span>Lịch sử</span>
+                </a>
+            </div>
+            
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon">☀️</span>
+            </button>
+        </div>
+    </nav>
+
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
-                    
-                    <!-- HEADER -->
-                    <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-solid border-gray-200/80 dark:border-border-dark px-6 py-4">
-                        <div class="flex items-center gap-4">
-                            <div class="text-3xl bg-gradient-to-r from-primary-blue to-primary-cyan dark:from-primary-teal dark:to-primary-purple text-transparent bg-clip-text">
-                                <span class="material-symbols-outlined !text-4xl">smart_toy</span>
-                            </div>
-                            <div class="flex-1">
-                                <h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
-                                    Phân Loại Chủ Đề Văn Bản
-                                </h1>
-                                <p class="text-sm text-gray-500 dark:text-text-muted-dark">
-                                    Phân tích văn bản tiếng Việt bằng AI
-                                </p>
-                            </div>
-                        </div>
-                        <button id="themeToggle" class="self-center md:self-auto flex cursor-pointer items-center justify-center rounded-xl h-10 w-10 bg-white/60 dark:bg-card-dark text-gray-600 dark:text-white text-sm font-bold min-w-0 backdrop-blur-sm border border-gray-200/80 dark:border-transparent hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined" id="themeIcon">light_mode</span>
-                        </button>
-                    </header>
 
                     <!-- MAIN CONTENT -->
                     <main class="flex-grow p-4 md:p-6">
@@ -80,16 +91,16 @@
                                 <textarea 
                                     id="textInput"
                                     maxlength="5000"
-                                    placeholder="Nhập văn bản tiếng Việt cần phân loại tại đây...  (tối thiểu 10 ký tự)"
-                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-y-auto rounded-xl text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary-blue/50 dark:focus:ring-primary-purple/50 border border-gray-300/80 dark:border-border-dark bg-card-light/80 dark: bg-card-dark focus:border-primary-blue dark:focus: border-primary-purple min-h-48 placeholder:text-gray-400 dark:placeholder:text-text-muted-dark p-4 text-base font-normal leading-normal shadow-sm backdrop-blur-sm transition-all"
+                                    placeholder="Nhập văn bản tiếng Việt cần phân loại tại đây... (tối thiểu 10 ký tự)"
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-y-auto rounded-xl text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary-blue/50 dark:focus:ring-primary-purple/50 border border-gray-300/80 dark:border-border-dark bg-card-light/80 dark:bg-card-dark focus:border-primary-blue dark:focus:border-primary-purple min-h-48 placeholder: text-gray-400 dark: placeholder:text-text-muted-dark p-4 text-base font-normal leading-normal shadow-sm backdrop-blur-sm transition-all"
                                 ></textarea>
-                                <p id="charCounter" class="text-right text-xs text-gray-500 dark:text-text-muted-dark mt-2 pr-1">
+                                <p id="charCounter" class="text-right text-xs text-gray-500 dark: text-text-muted-dark mt-2 pr-1">
                                     0/5000 ký tự
                                 </p>
                             </label>
                             
                             <div class="flex flex-col sm:flex-row gap-3 justify-start">
-                                <button id="classifyBtn" class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-gradient-to-r from-primary-blue to-primary-cyan dark:from-primary-teal dark:to-primary-purple text-white dark:text-gray-900 text-base font-bold leading-normal tracking-[0. 015em] gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/30 dark:shadow-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                                <button id="classifyBtn" class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-gradient-to-r from-primary-blue to-primary-cyan dark:from-primary-teal dark:to-primary-purple text-white dark:text-gray-900 text-base font-bold leading-normal tracking-[0.015em] gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/30 dark:shadow-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
                                     <span class="material-symbols-outlined">search</span>
                                     <span class="truncate">Phân Loại</span>
                                 </button>
@@ -116,7 +127,7 @@
                                 </div>
                                 <div>
                                     <p class="text-sm text-gray-500 dark:text-text-muted-dark">Chủ đề chính</p>
-                                    <p id="mainTopicText" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-cyan dark:from-primary-teal dark:to-primary-purple">
+                                    <p id="mainTopicText" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-cyan dark: from-primary-teal dark:to-primary-purple">
                                         --
                                     </p>
                                 </div>
@@ -126,7 +137,7 @@
                             <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
                                 
                                 <!-- Donut Chart -->
-                                <div class="lg:col-span-2 bg-card-light/80 dark:bg-card-dark p-6 rounded-xl border border-gray-200/80 dark:border-border-dark flex flex-col items-center justify-center shadow-sm backdrop-blur-sm">
+                                <div class="lg:col-span-2 bg-card-light/80 dark:bg-card-dark p-6 rounded-xl border border-gray-200/80 dark: border-border-dark flex flex-col items-center justify-center shadow-sm backdrop-blur-sm">
                                     <h3 class="font-semibold mb-4 text-gray-800 dark:text-gray-200">Top 5 Chủ Đề</h3>
                                     <div class="relative w-48 h-48">
                                         <canvas id="donutChart"></canvas>
@@ -153,7 +164,7 @@
                                         Chưa có dữ liệu
                                     </p>
                                     <p class="text-gray-500 dark:text-text-muted-dark text-sm font-normal leading-normal">
-                                        Nhập văn bản và nhấn 'Phân Loại' để bắt đầu. 
+                                        Nhập văn bản và nhấn 'Phân Loại' để bắt đầu.
                                     </p>
                                 </div>
                             </div>
@@ -162,9 +173,9 @@
                         <!-- LOADING STATE -->
                         <div id="loadingState" class="hidden flex-col px-4 py-16 items-center justify-center text-center">
                             <div class="flex flex-col items-center gap-4">
-                                <div class="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-primary-blue dark:border-gray-700 dark:border-t-primary-purple"></div>
-                                <p class="text-gray-900 dark:text-white text-lg font-semibold leading-tight">
-                                    Đang phân tích... 
+                                <div class="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-primary-blue dark: border-gray-700 dark:border-t-primary-purple"></div>
+                                <p class="text-gray-900 dark: text-white text-lg font-semibold leading-tight">
+                                    Đang phân tích...
                                 </p>
                             </div>
                         </div>
@@ -183,9 +194,8 @@
                     </main>
 
                     <!-- FOOTER -->
-                    <footer class="text-center py-6 text-xs text-gray-500 dark:text-gray-500 border-t border-gray-200/80 dark:border-border-dark">
-                        <!-- <p>Powered by AI ❤️ | Hỗ trợ tiếng Việt 🇻🇳</p> -->
-                        <span>© 2025 Topic Classification AI ❤️</span>
+                    <footer class="text-center py-6 text-xs text-gray-500 dark: text-gray-500 border-t border-gray-200/80 dark:border-border-dark">
+                        <span>© 2025 Topic Classification AI - Tran Duc Long❤️</span>
                     </footer>
 
                 </div>
@@ -193,10 +203,35 @@
         </div>
     </div>
 
+    <!-- Mobile Bottom Nav -->
+    <nav class="navbar-mobile">
+        <div class="navbar-mobile-container">
+            <a href="home.html" class="navbar-mobile-link" data-page="home">
+                <span class="navbar-mobile-emoji">🏠</span>
+                <span class="navbar-mobile-text">Giới thiệu</span>
+            </a>
+            <a href="classify.html" class="navbar-mobile-link" data-page="classify">
+                <span class="navbar-mobile-emoji">🔍</span>
+                <span class="navbar-mobile-text">Phân loại</span>
+            </a>
+            <a href="history.html" class="navbar-mobile-link" data-page="history">
+                <span class="navbar-mobile-emoji">📜</span>
+                <span class="navbar-mobile-text">Lịch sử</span>
+            </a>
+            <button class="navbar-mobile-link theme-toggle">
+                <span class="navbar-mobile-emoji theme-toggle-icon">☀️</span>
+                <!-- <span class="navbar-mobile-text">Theme</span> -->
+            </button>
+        </div>
+    </nav>
+
     <!-- Config -->
-    <script src="config.js"></script>
+    <script src="../config.js"></script>
+    <!-- Shared JS -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/navbar.js"></script>
     <!-- Main Script -->
-    <script src="script.js"></script>
+    <script src="../js/classify.js"></script>
 
 </body>
 </html>
