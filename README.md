@@ -5,7 +5,7 @@
 
 # 📰 Topic Classification - Vietnamese Text Classifier
 
-![Banner](docs\assets\banner.png)
+![Banner](docs/assets/banner.png)
 
 <div align="center">
 
@@ -317,15 +317,15 @@ Topic Classification
 
 **Landing Page (Light Mode):**
 
-![Home Light](docs\assets\home-light.png)
+![Home Light](docs/assets/home-light.png)
 
 **Landing Page (Dark Mode):**
 
-![Home Dark](docs\assets\home-dark.png)
+![Home Dark](docs/assets/home-dark.png)
 
 **Features Section:**
 
-![Features](docs\assets\features-dark.png)
+![Features](docs/assets/features-dark.png)
 
 </details>
 
@@ -341,11 +341,11 @@ Topic Classification
 
 **Results Display:**
 
-![Classify Results](docs\assets\results.png)
+![Classify Results](docs/assets/results.png)
 
 **Mobile View:**
 
-![Classify Mobile](docs\assets\mobile-view.png)
+![Classify Mobile](docs/assets/mobile-view.png)
 
 </details>
 
@@ -356,15 +356,15 @@ Topic Classification
 
 **History List:**
 
-![History List](docs\assets\history-list.png)
+![History List](docs/assets/history-list.png)
 
 **Filter & Actions:**
 
-![History Actions](docs\assets\filter-topic.png)
+![History Actions](docs/assets/filter-topic.png)
 
 **Empty State:**
 
-![History Empty](docs\assets\delete-all.png)
+![History Empty](docs/assets/delete-all.png)
 ![alt text](docs/assets/empty-history.png)
 </details>
 
