@@ -42,6 +42,9 @@ Thumbs.db
 # Jupyter Notebook
 .ipynb_checkpoints
 
+docs/
+
+
 project structure.txt
 roadmap.txt
 srs.txt
