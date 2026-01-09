@@ -5,20 +5,22 @@
 (function() {
     'use strict';
     
-    // Detect current page and set active class
+    // Detect current page (supports clean URLs without .html) and set active class
     function setActivePage() {
         const currentPath = window.location.pathname;
-        const currentPage = currentPath.split('/').pop() || 'home.html';
+        const rawPage = currentPath.split('/').pop() || 'index.html';
+        const cleaned = rawPage.split('#')[0].split('?')[0];
+        const pageKey = cleaned.replace(/\.html$/, '') || 'index';
         
-        // Map filenames to navigation items
+        // Map filenames/clean URLs to nav keys
         const pageMap = {
-            'home.html': 'home',
-            'index.html': 'home',
-            'classify.html': 'classify',
-            'history.html': 'history'
+            'home': 'home',
+            'index': 'home',
+            'classify': 'classify',
+            'history': 'history'
         };
         
-        const activePage = pageMap[currentPage] || 'home';
+        const activePage = pageMap[pageKey] || 'home';
         
         // Set active class on all nav links (desktop + mobile)
         const allLinks = document.querySelectorAll('[data-page]');
