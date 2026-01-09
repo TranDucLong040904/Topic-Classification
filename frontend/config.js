@@ -2,7 +2,7 @@
 
 // API Configuration
 const API_CONFIG = {
-    BASE_URL: 'http://localhost:5000',
+    BASE_URL: 'https://leotran-topic-classification.onrender.com',
     ENDPOINTS: {
         PREDICT: '/predict'
     }
