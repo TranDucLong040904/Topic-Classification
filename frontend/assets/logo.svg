@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title>Topic Classifier Logo</title>
+  <desc>Simple monogram logo for Topic Classifier</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#00F5A0"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="136" height="136" rx="28" fill="url(#g)"/>
+  <rect x="32" y="40" width="96" height="80" rx="16" fill="white" opacity="0.14"/>
+  <path d="M52 58h40c6 0 11 5 11 11v22c0 6-5 11-11 11H68l-12 10v-10h-4c-6 0-10-5-10-11V69c0-6 4-11 10-11z" fill="white" opacity="0.9"/>
+  <circle cx="104" cy="104" r="18" fill="white"/>
+  <path d="M98 104l6 6 12-12" fill="none" stroke="#00B884" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

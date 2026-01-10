@@ -41,8 +41,10 @@
     text-decoration: none;
 }
 
-.navbar-logo-emoji {
-    font-size: 2rem;
+.navbar-logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .navbar-logo-text {
