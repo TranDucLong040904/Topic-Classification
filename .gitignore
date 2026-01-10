@@ -11,15 +11,8 @@ env/
 ENV/
 .venv
 
-# Model files (quá lớn)
-backend/models/*.pkl
-backend/models/*.joblib
-backend/models/*.h5
-
-# Data files (nếu quá lớn)
-backend/data/*.csv
-# Hoặc chỉ ignore file lớn:
-# backend/data/large_dataset.csv
+# Model files
+# Đừng ignore nếu cần deploy kèm mô hình; giữ lại nếu bạn lưu trữ ở nơi khác
 
 # IDE
 .vscode/
